@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp">
+<w3-test-directive></w3-test-directive>
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        template : "<h1>Succes!</h1>"
+    };
+});
+</script>
+<h1>Succes!</h1>
+
+<div w3-test-directive></div>
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        template : "<h1>Succes!</h1>"
+    };
+});
+</script>
+
+<div class="w3-test-directive"></div>
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        restrict : "C",
+        template : "<h1>Succes!</h1>"
+    };
+});
+</script>
+
+<p><strong>Note:</strong> Class</p>
+
+
+<!-- directive: w3-test-directive -->
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        restrict : "M",
+        replace : true,
+        template : "<h1>Succes!</h1>"
+    };
+});
+</script>
+
+<p><strong>Note:</strong> Comment</p>
+</body>
+
+
+<br>
+<p>Scrieti ceva:</p>
+<form name="myForm">
+<input name="myInput" ng-model="myInput" required>
+</form>
+<h1>{{myForm.myInput.$valid}}</h1>
+<br>
+<a class="readmore" href="Filter.html">Accesati</a> <br>
+<a class="readmore" href="LimitTo.html">Accesati</a><br>
+<a class="readmore" href="Adaug.html">Accesati</a><br>
+<a class="readmore" href="Calcul.html">Accesati</a><br>
+<a class="readmore" href="LimitTo.html">Accesati</a><br>
+<a class="readmore" href="Order.html">Accesati</a><br>
+</body>
+</html>

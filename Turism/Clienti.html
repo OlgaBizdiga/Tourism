@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+ 
+<style>
+   body {
+      background:LightBlue;
+}
+</style>
+<div ng-app="myApp" ng-controller="namesCtrl" ng-controller="sizeCtrl">
+ 
+<h2>Страны с которыми мы работаем:</h2>
+<ul>
+  <li ng-repeat="x in names | orderBy:'country'">
+    {{ x.country }}
+  </li>
+</ul>
+<h2>Острова в Греции на букву C:</h2>
+<ul>
+  
+    <li ng-repeat="x in names1 | filter : 'C'">
+      {{ x }}
+    </li>
+  </ul>
+  <h2>3 страны для отдыха:</h2>
+  <ul>
+    <li ng-repeat="x in countries | limitTo : 3">{{x}}</li>
+    </ul>
+    <h2>Выберите для себя лучшую страну: </h2>
+    <select ng-model="selectedName" ng-options="x for x in names2">
+    </select>
+    <form>
+        <h2>Топ 3 популярных стран: </h2>
+        <input type="radio" ng-model="myVar" value="greece">Greece
+        <input type="radio" ng-model="myVar" value="tur">Turkey
+        <input type="radio" ng-model="myVar" value="bul">Bulgary
+      </form>
+      
+      <div ng-switch="myVar">
+        <div ng-switch-when="greece">
+          
+           <p>Welcome to Greece.</p>
+        </div>
+        <div ng-switch-when="tur">
+          
+           <p>Welcome to Turkey.</p>
+        </div>
+        <div ng-switch-when="bul">
+        
+           <p>Welcome to Bulgary.</p>
+        </div>
+        
+      </div>
+      <h2>Введите свое имя:</h2>
+      <input ng-copy="count2 = count + 1" ng-init="count=0" ng-cut="count3 = count + 1"ng-paste="count4 = count + 1" />
+
+<p>The text has been copied {{count2}} times.</p>
+<p>The text has been cut {{count3}} times.</p>
+<p>The text has been paste {{count4}} times.</p>
+
+<h2>Укажите страну где хотели бы отдохнуть:</h2>
+<input type="text" ng-change="myFunc()" ng-model="myValue" />
+<p>The input field has changed {{count1}} times.</p>
+
+<div class="w3-test-directive"></div>
+<a class="readmore" href="Adaug.html">Работа со списками</a> <br>
+<a class="readmore" href="Calcul.html">Вычисления</a> 
+</div>
+
+
+
+    
+<script>
+angular.module('myApp', []).controller('namesCtrl', function($scope) {
+    $scope.names = [
+        {country:'Greece'},
+        {country:'Turkey'},
+        {country:'Albania'},
+        {country:'Horvatia'},
+        {country:'Bulgary'},
+        {country:'Germany'},
+        {country:'Romania'},
+        {country:'France'},
+        {country:'Norway'}
+        ]; 
+
+        $scope.names1 = [
+        'Zakintos',
+        'Crete',
+        'Lefkada',
+        'Corfu',
+        'Pelopanes',
+        'Athens'
+    
+    ];
+    $scope.countries = ["Greece", "Turkey", "Bulgaria", "Moldova", "Maldivi", "Romania"];
+  
+
+    $scope.names2= ['Greece','Turkey','Albania','Horvatia','Bulgary','Germany','Romania','France','Norway'];
+    
+
+    $scope.count1 = 0;
+      $scope.myFunc = function() {
+        $scope.count1++;
+      };
+        
+   
+
+      
+    
+});
+
+
+
+</script>
+
+</body>
+</html>

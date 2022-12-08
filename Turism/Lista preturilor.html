@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+  <body ng-app>
+
+
+
+    <p ng-show="active"> <b>{{active}}</b></p>
+
+    <!-- Include AngularJS from Google's CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+<h1>Стоимость отдыха</h1>
+
+<table id="customers">
+  <tr>
+    <th>Услуги</th>
+    <th>Описание</th>
+    <th>Цена</th>
+  </tr>
+  <tr>
+    <td>Авиа-билеты</td>
+    <td>Авиа билет в категории Вип Класс на 2 человек</td>
+    <td>5000 lei</td>
+  </tr>
+  <tr>
+    <td>Проживание в отеле</td>
+    <td>Проживание 5-звездочном отеле 5 ночей в номере люкс </td>
+    <td>20000lei</td>
+  </tr>
+  <tr>
+    <td>Аренда машины</td>
+    <td>Аренда машины BMW на 5 дней</td>
+    <td>10000 lei</td>
+  </tr>
+  <tr>
+    <td>Экскурсии</td>
+    <td>Экскурсии в красивые места</td>
+    <td>5000 lei</td>
+  </tr>
+  <tr>
+
+</table>
+
+
+<div ng-app="">
+<p>Total: {{ 5000 + 20000 + 10000 + 5000}}</p>
+<p ng-non-bindable></p>Стоимость первых двух услуг: {{ 5000+20000 }}</p>
+</div>
+
+
+<br>
+<p>Предоставляемые услуги:</p>
+
+<select>
+  <option>Подбор туров</option>
+  <option ng-selected="mySel">Подбор авиа билетов</option>
+  <option>Подбор экскурсий</option>    
+  <option>Full</option> 
+</select>
+
+
+
+
+</body>
+</html>
+
+
+
